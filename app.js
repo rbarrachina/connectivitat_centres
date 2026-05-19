@@ -191,6 +191,12 @@ function renderMatches() {
     return;
   }
 
+  if (!query) {
+    updateStats([]);
+    showEmpty("Escriu una cerca", "Busca per codi, nom de centre o població per veure resultats.");
+    return;
+  }
+
   if (!matches.length) {
     showEmpty("Cap resultat", "Prova amb un altre codi, nom de centre o municipi.");
     return;
