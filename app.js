@@ -96,7 +96,7 @@ async function handleFile(event) {
       searchInput.value = state.initialQuery;
     }
     updateStats([]);
-    dataStatus.textContent = `${file.name}`;
+    dataStatus.textContent = "CSV carregat correctament";
     renderMatches();
   } catch (error) {
     state.rows = [];

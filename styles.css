@@ -54,17 +54,24 @@ input {
 
 .topbar {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 20px;
   padding: 28px;
   border-bottom: 1px solid var(--line);
 }
 
+.title-block {
+  display: grid;
+  gap: 18px;
+  min-width: 0;
+}
+
 .top-actions {
   display: flex;
   align-items: center;
   gap: 12px;
+  padding-top: 18px;
 }
 
 .eyebrow {
@@ -117,8 +124,8 @@ h1 {
 
 .control-panel {
   display: grid;
-  grid-template-columns: minmax(280px, 0.9fr) minmax(280px, 1.4fr);
-  gap: 18px;
+  grid-template-columns: minmax(280px, 0.56fr);
+  justify-content: end;
   padding: 24px 28px;
   border-bottom: 1px solid var(--line);
   background: linear-gradient(90deg, rgba(18, 39, 44, 0.74), rgba(13, 29, 33, 0.28));
@@ -133,7 +140,8 @@ h1 {
   display: flex;
   align-items: center;
   gap: 14px;
-  min-height: 76px;
+  width: min(520px, 100%);
+  min-height: 68px;
   border: 1px dashed rgba(53, 208, 194, 0.58);
   background: rgba(13, 29, 33, 0.72);
   padding: 14px;
@@ -158,9 +166,13 @@ h1 {
 }
 
 #csvFile {
-  width: 100%;
-  margin-top: 10px;
-  color: var(--muted);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .search-box {
@@ -544,7 +556,7 @@ h1 {
   filter: brightness(1.08);
 }
 
-@media (max-width: 860px) {
+@media (max-width: 760px) {
   .app-shell {
     width: min(100% - 20px, 1180px);
     padding-top: 10px;
@@ -556,6 +568,10 @@ h1 {
     grid-template-columns: 1fr;
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .control-panel {
+    justify-content: stretch;
   }
 
   .top-actions {
