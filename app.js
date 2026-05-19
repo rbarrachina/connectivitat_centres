@@ -225,7 +225,7 @@ function buildResult(row) {
   connectivityButton.addEventListener("click", () => {
     const isHidden = connectivityDetails.hidden;
     connectivityDetails.hidden = !isHidden;
-    connectivityButton.textContent = isHidden ? "Amaga connectivitat" : "Més informació de connectivitat";
+    connectivityButton.textContent = isHidden ? "Amaga connectivitat" : "Més informació connectivitat";
     if (isHidden && !connectivityDetails.dataset.ready) {
       connectivityDetails.replaceChildren(buildConnectivityDetails(row));
       connectivityDetails.dataset.ready = "true";
@@ -238,7 +238,7 @@ function buildResult(row) {
 async function toggleCentreDetails(row, panel, button) {
   const isHidden = panel.hidden;
   panel.hidden = !isHidden;
-  button.textContent = isHidden ? "Amaga informació" : "Més informació";
+  button.textContent = isHidden ? "Amaga fitxa centre" : "Fitxa centre";
   if (!isHidden || panel.dataset.ready) return;
 
   panel.innerHTML = '<p class="notice">Carregant la fitxa pública del centre...</p>';
