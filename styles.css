@@ -63,7 +63,6 @@ input {
 
 .title-block {
   display: grid;
-  gap: 18px;
   min-width: 0;
 }
 
@@ -104,6 +103,14 @@ h1 {
   padding: 8px 12px;
   font-weight: 800;
   white-space: nowrap;
+}
+
+.upload-pill {
+  cursor: pointer;
+}
+
+.upload-pill:hover {
+  background: rgba(53, 208, 194, 0.22);
 }
 
 .top-info-btn {

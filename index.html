@@ -13,19 +13,10 @@
           <div class="title-block">
             <p class="eyebrow">Inventari de xarxa</p>
             <h1 id="app-title">Connectivitat de centres</h1>
-            <div class="upload-zone">
-              <label for="csvFile" class="file-label">
-                <span class="file-icon" aria-hidden="true">⇅</span>
-                <span>
-                  <strong>Carrega el CSV</strong>
-                  <small>Compatible amb separadors de coma, punt i coma o tabulador.</small>
-                </span>
-              </label>
-              <input id="csvFile" type="file" accept=".csv,text/csv,.txt" />
-            </div>
           </div>
           <div class="top-actions">
-            <div class="status-pill" id="dataStatus">Cap CSV carregat</div>
+            <label for="csvFile" class="status-pill upload-pill" id="uploadPill">Carrega el CSV</label>
+            <input id="csvFile" type="file" accept=".csv,text/csv,.txt" />
             <button id="appInfoBtn" class="top-info-btn" type="button" title="Informació" aria-label="Informació de l'aplicació">i</button>
           </div>
         </header>

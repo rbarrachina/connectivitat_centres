@@ -62,7 +62,7 @@ const csvFile = document.querySelector("#csvFile");
 const searchInput = document.querySelector("#searchInput");
 const results = document.querySelector("#results");
 const template = document.querySelector("#resultTemplate");
-const dataStatus = document.querySelector("#dataStatus");
+const uploadPill = document.querySelector("#uploadPill");
 const rowCount = document.querySelector("#rowCount");
 const matchCount = document.querySelector("#matchCount");
 const municipalityCount = document.querySelector("#municipalityCount");
@@ -96,7 +96,7 @@ async function handleFile(event) {
       searchInput.value = state.initialQuery;
     }
     updateStats([]);
-    dataStatus.textContent = "CSV carregat correctament";
+    uploadPill.textContent = "CSV carregat correctament";
     renderMatches();
   } catch (error) {
     state.rows = [];
