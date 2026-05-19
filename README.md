@@ -12,12 +12,23 @@ python3 -m http.server 8000
 
 Després accedeix a `http://localhost:8000`.
 
+## GitHub Pages
+
+El projecte està preparat per desplegar-se amb GitHub Pages des de la branca `main`.
+
+URL prevista:
+
+```text
+https://rbarrachina.github.io/connectivitat_centres/
+```
+
 ## Enllaços
 
 La cerca queda reflectida a l'URL amb el paràmetre `q`. Per exemple:
 
 ```text
 http://localhost:8000/?q=Girona
+https://rbarrachina.github.io/connectivitat_centres/?q=Girona
 ```
 
 Com que el CSV es carrega localment al navegador, l'enllaç conserva la cerca però no pot incloure les dades del fitxer.
