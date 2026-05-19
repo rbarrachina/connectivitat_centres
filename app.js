@@ -296,9 +296,11 @@ function buildCentreDetails(row, centre) {
     ];
     wrapper.append(buildFieldGrid(fields));
   }
-  const fullSheetLink = buildFullCentreSheetLink(getCentreCode(row));
-  if (fullSheetLink) {
-    wrapper.append(fullSheetLink);
+  if (centre) {
+    const fullSheetLink = buildFullCentreSheetLink(getCentreCode(row));
+    if (fullSheetLink) {
+      wrapper.append(fullSheetLink);
+    }
   }
   return wrapper;
 }
