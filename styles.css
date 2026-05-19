@@ -131,8 +131,7 @@ h1 {
 
 .control-panel {
   display: grid;
-  grid-template-columns: minmax(280px, 0.56fr);
-  justify-content: end;
+  grid-template-columns: 1fr;
   padding: 24px 28px;
   border-bottom: 1px solid var(--line);
   background: linear-gradient(90deg, rgba(18, 39, 44, 0.74), rgba(13, 29, 33, 0.28));
@@ -184,7 +183,9 @@ h1 {
 
 .search-box {
   display: grid;
-  gap: 8px;
+  grid-template-columns: auto minmax(220px, 1fr);
+  align-items: center;
+  gap: 14px;
   color: var(--muted);
   font-size: 0.88rem;
   font-weight: 700;
@@ -207,6 +208,10 @@ h1 {
 
 .search-box input:disabled {
   opacity: 0.48;
+}
+
+.search-box input::placeholder {
+  color: rgba(143, 178, 182, 0.72);
 }
 
 .summary-grid {
