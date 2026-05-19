@@ -131,7 +131,9 @@ h1 {
 
 .control-panel {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(320px, 0.56fr) minmax(260px, 0.36fr);
+  align-items: center;
+  gap: 24px;
   padding: 24px 28px;
   border-bottom: 1px solid var(--line);
   background: linear-gradient(90deg, rgba(18, 39, 44, 0.74), rgba(13, 29, 33, 0.28));
@@ -166,7 +168,6 @@ h1 {
 }
 
 .file-label small,
-.summary-grid small,
 .muted {
   color: var(--muted);
 }
@@ -214,26 +215,28 @@ h1 {
   color: rgba(143, 178, 182, 0.72);
 }
 
-.summary-grid {
+.inline-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-bottom: 1px solid var(--line);
+  grid-template-columns: repeat(2, minmax(110px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
 }
 
-.summary-grid > div {
-  padding: 18px 28px;
-  border-right: 1px solid var(--line);
+.inline-stats > div {
+  background: rgba(7, 16, 18, 0.84);
+  padding: 10px 14px;
 }
 
-.summary-grid > div:last-child {
-  border-right: 0;
-}
-
-.summary-grid span {
+.inline-stats span {
   display: block;
-  font-size: 1.85rem;
+  font-size: 1.35rem;
   font-weight: 900;
   color: var(--amber);
+}
+
+.inline-stats small {
+  color: var(--muted);
 }
 
 .results {
@@ -592,19 +595,9 @@ h1 {
   }
 
   .control-panel,
-  .summary-grid,
   .main-data,
   .field-grid {
     grid-template-columns: 1fr;
-  }
-
-  .summary-grid > div {
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .summary-grid > div:last-child {
-    border-bottom: 0;
   }
 }
 

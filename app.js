@@ -65,7 +65,6 @@ const template = document.querySelector("#resultTemplate");
 const uploadPill = document.querySelector("#uploadPill");
 const rowCount = document.querySelector("#rowCount");
 const matchCount = document.querySelector("#matchCount");
-const municipalityCount = document.querySelector("#municipalityCount");
 const appInfoBtn = document.querySelector("#appInfoBtn");
 const aboutModal = document.querySelector("#aboutModal");
 const closeAboutModalBtn = document.querySelector("#closeAboutModalBtn");
@@ -378,7 +377,6 @@ function buildNotice(message) {
 function updateStats(matches) {
   rowCount.textContent = state.rows.length.toString();
   matchCount.textContent = matches.length.toString();
-  municipalityCount.textContent = new Set(state.rows.map((row) => simplify(row.Municipi)).filter(Boolean)).size.toString();
 }
 
 function showEmpty(title, message) {
