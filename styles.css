@@ -300,7 +300,7 @@ h1 {
 
 .main-data {
   display: grid;
-  grid-template-columns: repeat(6, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: 1px;
   margin: 14px 24px 20px 28px;
   background: var(--line);

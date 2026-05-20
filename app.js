@@ -35,7 +35,7 @@ const expectedHeaders = [
   "Longitud",
 ];
 
-const primaryFields = ["IP pública", "Vel", "Tipus WAN", "LAN", "Sonda", "Telefonia"];
+const primaryFields = ["IP pública", "Proveïdor SD-WAN", "Vel", "Tipus WAN", "LAN", "Sonda", "Telefonia"];
 const identityFields = ["ST Codi", "Codi", "Codi centre", "Centre", "Municipi"];
 const centreSheetCsvFields = [
   "Adreça",
@@ -214,7 +214,9 @@ function buildResult(row) {
   node.querySelector(".code-line").textContent = code ? `Codi centre ${code}` : "Codi no informat";
   node.querySelector(".centre-name").textContent = centre;
   node.querySelector(".municipality-line").textContent = municipality;
-  node.querySelector(".main-data").replaceChildren(...primaryFields.map((field) => buildDefinition(field, row[field])));
+  node.querySelector(".main-data").replaceChildren(
+    ...primaryFields.map((field) => buildDefinition(field, getPrimaryValue(row, field)))
+  );
 
   const infoButton = node.querySelector(".info-button");
   const connectivityButton = node.querySelector(".connectivity-button");
@@ -340,6 +342,18 @@ function buildConnectivityDetails(row) {
 
   wrapper.append(fields.length ? buildFieldGrid(fields) : buildNotice("No hi ha més camps disponibles al CSV."));
   return wrapper;
+}
+
+function getPrimaryValue(row, field) {
+  if (field === "Proveïdor SD-WAN") {
+    return getSdWanProvider(row["IP pública"]);
+  }
+  return row[field];
+}
+
+function getSdWanProvider(publicIp) {
+  const ip = String(publicIp || "").trim();
+  return ip.startsWith("85.192.70.") || ip.startsWith("85.192.71.") ? "XOC" : "Telefònica";
 }
 
 function buildFieldGrid(fields) {
